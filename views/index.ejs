@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Expense Tracker</title>
+</head>
+<body>
+
+<h1>Smart Expense Tracker</h1>
+
+<form action="/add" method="POST">
+
+    <input type="text"
+           name="title"
+           placeholder="Expense Title"
+           required>
+
+    <input type="number"
+           name="amount"
+           placeholder="Amount"
+           required>
+
+    <input type="text"
+           name="category"
+           placeholder="Category"
+           required>
+
+    <input type="date"
+           name="date"
+           required>
+
+    <button type="submit">
+        Add Expense
+    </button>
+
+</form>
+
+<hr>
+
+<h2>Expense List</h2>
+
+<ul>
+
+<% expenses.forEach(exp => { %>
+
+<li>
+    <%= exp.title %> -
+    ₹<%= exp.amount %> -
+    <%= exp.category %>
+</li>
+
+<% }) %>
+
+</ul>
+
+</body>
+</html>
